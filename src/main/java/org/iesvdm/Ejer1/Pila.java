@@ -3,12 +3,13 @@ package org.iesvdm.Ejer1;
 import java.util.LinkedList;
 
 public class Pila<T> {
-    private LinkedList<T> lista;
+    private LinkedList<T> lista; // Lista que almacena los elementos de la pila
 
     public Pila() {
         lista = new LinkedList<>();
     }
 
+    // Comprueba si la pila esta vacía
     public boolean estaVacia() {
         if (lista.isEmpty()) {
             return true;
@@ -17,6 +18,7 @@ public class Pila<T> {
         }
     }
 
+    // Extrae el elemento que pide en el índice
     public T extraer(int indice) {
         if (!estaVacia() && indice >= 0 && indice < lista.size()) {
             return lista.remove(indice);
@@ -24,6 +26,7 @@ public class Pila<T> {
         return null;
     }
 
+    // Devuelve el primer elemento de la pila
     public T primero() {
         if (!estaVacia()) {
             return lista.get(lista.size() - 1);
@@ -31,7 +34,7 @@ public class Pila<T> {
         return null;
     }
 
-
+    // Añade un elemento a la pila
     public void añadir(T elemento) {
         lista.add(elemento);
     }
@@ -51,6 +54,7 @@ public class Pila<T> {
 
     public static void main(String[] args) {
         Pila<Integer> pila = new Pila<>();
+
         pila.añadir(1);
         pila.añadir(2);
         pila.añadir(3);

@@ -1,7 +1,7 @@
 package org.iesvdm.Ejer2;
 
 public class PilaArray<T> {
-    private T[] numeros;
+    private T[] numeros; // Almacena los elementos de la pila
     private int elementos;
 
     public PilaArray(int capacidad) {
@@ -9,6 +9,7 @@ public class PilaArray<T> {
         this.elementos = 0;
     }
 
+    // Comprueba si la pila esta vacía
     public boolean estaVacia() {
         if (this.elementos == this.numeros.length) {
             return true;
@@ -17,6 +18,7 @@ public class PilaArray<T> {
         }
     }
 
+    // Extrae el elemento que pide en el índice
     public T extraer(int indice) {
         if (estaVacia() || indice < 0 || indice >= elementos) {
             return null;
@@ -31,7 +33,7 @@ public class PilaArray<T> {
         return elemento;
     }
 
-
+    // Devuelve el primer elemento de la pila
     public T primero() {
         if (!estaVacia()) {
             return numeros[elementos - 1];
@@ -39,6 +41,7 @@ public class PilaArray<T> {
         return null;
     }
 
+    // Añade un elemento a la pila
     public void añadir(T elemento) {
         if (elementos >= numeros.length) {
             throw new IllegalStateException("La pila esta llena");
@@ -60,7 +63,8 @@ public class PilaArray<T> {
     }
 
     public static void main(String[] args) {
-        PilaArray<Integer> pila = new PilaArray<>(5);
+        PilaArray<Integer> pila = new PilaArray<>(5); // Crea una pila de enteros con capacidad de 5
+
         pila.añadir(1);
         pila.añadir(2);
         pila.añadir(3);

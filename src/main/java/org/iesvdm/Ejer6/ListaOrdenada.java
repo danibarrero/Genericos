@@ -4,26 +4,30 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class ListaOrdenada <E extends Comparable<E>> {
-    private ArrayList<E> lista;
+    private ArrayList<E> lista; // ArrayList que almacena los elementos de una lista
 
 
     public ListaOrdenada() {
         this.lista = new ArrayList<>();
     }
 
+    // Añade el elemento a la lista y lo ordena
     public void add(E o) {
         lista.add(o);
         Collections.sort(lista);
     }
 
+    // Obtiene un elemento
     public E get(int index) {
         return lista.get(index);
     }
 
+    // Obtiene el tamaño
     public int size() {
         return lista.size();
     }
 
+    // Comprueba si la lista esta vacía
     public boolean isEmpty() {
         if (lista.isEmpty()) {
             return true;
@@ -31,6 +35,8 @@ public class ListaOrdenada <E extends Comparable<E>> {
             return false;
         }
     }
+
+    // Elimina un elemento de la lista y devuelve true si lo elimina
      public boolean remove(E o) {
         if (lista.remove(o)) {
             return true;
@@ -39,6 +45,7 @@ public class ListaOrdenada <E extends Comparable<E>> {
         }
      }
 
+     // Comprueba si un elemento existe en la lista
      public boolean indexOf(E o) {
         return lista.indexOf(o) != -1;
      }
