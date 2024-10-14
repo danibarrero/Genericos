@@ -1,8 +1,8 @@
 package org.iesvdm.Ejer7;
 
-public interface Operable<E> {
-    E sumar(E otro);
-    E restar(E otro);
-    E multiplicar(E otro);
-    E dividir(E otro);
+public interface Operable<T> {
+    T sumar(T otro);
+    T restar(T otro);
+    T multiplicar(T otro);
+    T dividir(T otro);
 }

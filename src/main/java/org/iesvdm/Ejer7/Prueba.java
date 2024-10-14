@@ -1,32 +1,41 @@
 package org.iesvdm.Ejer7;
 
-class Prueba implements Operable<Double> {
-    private Double valor;
+public class Prueba implements Operable<Integer> {
+    private Integer valor;
 
-    public Prueba(Double valor) {
+    public Prueba(int valor) {
         this.valor = valor;
     }
 
     @Override
-    public Double sumar(Double otro) {
+    public Integer sumar(Integer otro) {
         return valor + otro;
     }
 
     @Override
-    public Double restar(Double otro) {
+    public Integer restar(Integer otro) {
         return valor - otro;
     }
 
     @Override
-    public Double multiplicar(Double otro) {
+    public Integer multiplicar(Integer otro) {
         return valor * otro;
     }
 
     @Override
-    public Double dividir(Double otro) {
+    public Integer dividir(Integer otro) {
         if (otro == 0) {
-            return null;
+            return  0;
         }
         return valor / otro;
+    }
+
+    public static void main(String[] args) {
+        Operable<Integer> operable = new Prueba(10);
+
+        System.out.println("Suma: " + operable.sumar(1));
+        System.out.println("Resta: " + operable.restar(5));
+        System.out.println("Multiplicación: " + operable.multiplicar(3));
+        System.out.println("División: " + operable.dividir(2));
     }
 }
