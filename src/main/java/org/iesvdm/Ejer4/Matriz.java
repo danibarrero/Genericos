@@ -16,17 +16,14 @@ public class Matriz<T> {
     public void set(int fila, int columna, T elemento) {
         if (fila >= 0 && fila < filas && columna >= 0 && columna < columnas) {
             matriz[fila][columna] = elemento;
-        } else {
-            throw new IndexOutOfBoundsException("Fuera de rango");
         }
     }
 
     public T get(int fila, int columna) {
         if (fila >= 0 && fila < filas && columna >= 0 && columna < columnas) {
             return matriz[fila][columna];
-        } else {
-            throw new IndexOutOfBoundsException("Fuera de rango");
         }
+        return null;
     }
 
     public int columnas() {
@@ -56,8 +53,7 @@ public class Matriz<T> {
             }
         }
 
-        System.out.println("Matriz");
-        System.out.println(matriz.toString());
+        System.out.println("Matriz: " + matriz.toString());
 
         System.out.println("Fila 3, Columna 0: " + matriz.get(3, 0));
     }

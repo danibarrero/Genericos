@@ -4,22 +4,22 @@ public class PilaArray<T> {
     private T[] numeros;
     private int elementos;
 
-    @SuppressWarnings("unchecked")
     public PilaArray(int capacidad) {
         this.numeros = (T[]) new Object[capacidad];
         this.elementos = 0;
     }
 
     public boolean estaVacia() {
-        return elementos == 0;
+        if (this.elementos == this.numeros.length) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public T extraer(int indice) {
-        if (estaVacia()) {
-            throw new IllegalStateException("La pila está vacía");
-        }
-        if (indice < 0 || indice >= elementos) {
-            throw new IndexOutOfBoundsException("Fuera de rango");
+        if (estaVacia() || indice < 0 || indice >= elementos) {
+            return null;
         }
 
         T elemento = numeros[indice];
@@ -31,11 +31,12 @@ public class PilaArray<T> {
         return elemento;
     }
 
+
     public T primero() {
-        if (estaVacia()) {
-            throw new IllegalStateException("La pila esta vacia");
+        if (!estaVacia()) {
+            return numeros[elementos - 1];
         }
-        return numeros[elementos - 1];
+        return null;
     }
 
     public void añadir(T elemento) {
@@ -67,7 +68,7 @@ public class PilaArray<T> {
         System.out.println("Pila: " + pila);
         System.out.println("Primer numero: " + pila.primero());
         System.out.println("Extraer: " + pila.extraer(1));
-        System.out.println("Pila después de extraer: " + pila);
+        System.out.println("Pila: " + pila);
         System.out.println("¿La pila está vacía? " + pila.estaVacia());
     }
 }

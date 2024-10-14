@@ -2,7 +2,7 @@ package org.iesvdm.Ejer5;
 
 public class Main {
     public static void main(String[] args) {
-        ColeccionSimpleGenerica<Integer> pila = new Pila<>();
+        ColeccionSimpleGenerica<Integer> pila = new Coleccion<>();
 
         pila.añadir(3);
         pila.añadir(2);
